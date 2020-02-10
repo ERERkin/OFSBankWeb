@@ -6,11 +6,59 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a288fb1a-9fb0-4df9-ab3a-924392cd090d" name="Default Changelist" comment="" />
+    <list default="true" id="a288fb1a-9fb0-4df9-ab3a-924392cd090d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/DB/DB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/Bank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/Credit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/CreditAnnuity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/CreditDifferential.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/StateTreasuryBill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -27,22 +75,31 @@
     </option>
   </component>
   <component name="ProjectId" id="1Xa1q9tS8iNA8oag3yPd8jZDRxh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/model" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.model" />
+      <recent name="com.DB" />
       <recent name="com" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\OFSBankWeb\src\main\java\com\model" />
     </key>
   </component>
   <component name="RunManager">
@@ -130,6 +187,15 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:postgres@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:postgres@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@75dddd21" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
             </expand>
             <select />
           </treeState>
@@ -149,34 +215,59 @@
       <updated>1581269579138</updated>
       <workItem from="1581269582465" duration="469000" />
       <workItem from="1581270061114" duration="180000" />
-      <workItem from="1581270247625" duration="241000" />
+      <workItem from="1581270247625" duration="2792000" />
+      <workItem from="1581306320957" duration="4288000" />
+      <workItem from="1581314832995" duration="2251000" />
+      <workItem from="1581318066191" duration="6000" />
+      <workItem from="1581318227144" duration="709000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581270537987">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581271320920">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1581270537987" />
-    <state width="905" height="179" key="GridCell.Tab.0.bottom" timestamp="1581270051664">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1581271320920" />
+    <state x="496" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1581315382075">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581270051664" />
-    <state width="905" height="179" key="GridCell.Tab.0.center" timestamp="1581270051664">
+    <state x="496" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1581315382075" />
+    <state x="471" y="106" key="FileChooserDialogImpl" timestamp="1581270680467">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581270051664" />
-    <state width="905" height="179" key="GridCell.Tab.0.left" timestamp="1581270051664">
+    <state x="471" y="106" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1581270680467" />
+    <state width="893" height="176" key="GridCell.Tab.0.bottom" timestamp="1581308352540">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581270051664" />
-    <state width="905" height="179" key="GridCell.Tab.0.right" timestamp="1581270051664">
+    <state width="893" height="176" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581308352540" />
+    <state width="893" height="176" key="GridCell.Tab.0.center" timestamp="1581308352540">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581270051664" />
+    <state width="893" height="176" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581308352540" />
+    <state width="893" height="176" key="GridCell.Tab.0.left" timestamp="1581308352538">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="893" height="176" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581308352538" />
+    <state width="893" height="176" key="GridCell.Tab.0.right" timestamp="1581308352540">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="893" height="176" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581308352540" />
     <state width="905" height="179" key="GridCell.Tab.1.bottom" timestamp="1581270051664">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -213,5 +304,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1581269872473" />
+    <state x="584" y="254" width="326" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1581307785769">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="584" y="254" width="326" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.728@0.0.1366.728" timestamp="1581307785769" />
+    <state x="386" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1581314834358">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="386" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581314834358" />
+    <state x="521" y="155" key="svn.repositoryBrowser" timestamp="1581270725693">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="521" y="155" key="svn.repositoryBrowser/0.0.1366.728@0.0.1366.728" timestamp="1581270725693" />
   </component>
 </project>
