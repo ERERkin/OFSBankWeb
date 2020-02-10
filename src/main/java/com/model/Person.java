@@ -1,5 +1,7 @@
 package com.model;
 
+import com.DB.DB;
+
 import java.util.ArrayList;
 
 public class Person {
@@ -85,35 +87,31 @@ public class Person {
 
     public void addCredit(int id, int personId, double sum, double percent, int month, double resultSum, boolean kind){
         if(kind){
-            activeCredits.add(new CreditAnnuity(id,personId,sum,percent,month));
+            DB.addCredit(new CreditAnnuity(id,personId,sum,percent,month));
         }else {
-            activeCredits.add(new CreditDifferential(id,personId,sum, percent, month));
+            DB.addCredit(new CreditDifferential(id,personId,sum, percent, month));
         }
     }
     // Добавление кредита в список кредитов
 
     public void addStateTreasuryBill(int personId,int month, int firstSum){
-        stateTreasuryBills.add(new StateTreasuryBill(personId, month, firstSum));
+        DB.addStateTreasuryBill(new StateTreasuryBill(0, personId, month, firstSum));
     }
     // Добавление векселя в список векселей
 
     public double profitMonth(){
         double answer = 0.0;
+        ArrayList<Credit> activeCredits = DB.creditList(id, true);
+        ArrayList<StateTreasuryBill> stateTreasuryBills = DB.getStateTreasuryBillClientId(id);
         for(int i = 0; i < activeCredits.size(); i++){
             answer += Math.round(activeCredits.get(i).creditInMonth());
             activeCredits.get(i).monthMinus();
-            if(activeCredits.get(i).month == 0){
-                passiveCredits.add(activeCredits.get(i));
-                activeCredits.remove(i);
-                i--;
-            }
         }
         for(int i = 0; i < stateTreasuryBills.size(); i++){
             double k = stateTreasuryBills.get(i).stateTreasuryBillInNextMonth();
             answer -= k;
             if(Math.round(k) == 0){
-                stateTreasuryBills.remove(i);
-                i--;
+                DB.deleteSTB(stateTreasuryBills.get(i).getId());
             }
         }
         return answer;

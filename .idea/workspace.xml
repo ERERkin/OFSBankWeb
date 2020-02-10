@@ -7,19 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a288fb1a-9fb0-4df9-ab3a-924392cd090d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/DB/DB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/Bank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/Credit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/CreditAnnuity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/CreditDifferential.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/Payment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/StateTreasuryBill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/DB/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DB/DB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/model/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/Credit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/model/Credit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/StateTreasuryBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/model/StateTreasuryBill.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +39,36 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
     </expand>
     <select />
@@ -194,7 +217,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:postgres@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@75dddd21" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@36265c5c" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -219,8 +242,17 @@
       <workItem from="1581306320957" duration="4288000" />
       <workItem from="1581314832995" duration="2251000" />
       <workItem from="1581318066191" duration="6000" />
-      <workItem from="1581318227144" duration="709000" />
+      <workItem from="1581318227144" duration="2939000" />
+      <workItem from="1581344405072" duration="5616000" />
     </task>
+    <task id="LOCAL-00001" summary="Added something">
+      <created>1581319046692</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581319046692</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,35 +271,43 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added something" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added something" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581271320920">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1581271320920" />
-    <state x="496" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1581315382075">
+    <state x="496" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1581349010788">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="496" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1581315382075" />
+    <state x="496" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1581349010788" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1581319045496">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581319045496" />
     <state x="471" y="106" key="FileChooserDialogImpl" timestamp="1581270680467">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="471" y="106" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1581270680467" />
-    <state width="893" height="176" key="GridCell.Tab.0.bottom" timestamp="1581308352540">
+    <state width="905" height="2" key="GridCell.Tab.0.bottom" timestamp="1581350596868">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="893" height="176" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581308352540" />
-    <state width="893" height="176" key="GridCell.Tab.0.center" timestamp="1581308352540">
+    <state width="905" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581350596868" />
+    <state width="905" height="2" key="GridCell.Tab.0.center" timestamp="1581350596868">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="893" height="176" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581308352540" />
-    <state width="893" height="176" key="GridCell.Tab.0.left" timestamp="1581308352538">
+    <state width="905" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581350596868" />
+    <state width="905" height="2" key="GridCell.Tab.0.left" timestamp="1581350596868">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="893" height="176" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581308352538" />
-    <state width="893" height="176" key="GridCell.Tab.0.right" timestamp="1581308352540">
+    <state width="905" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581350596868" />
+    <state width="905" height="2" key="GridCell.Tab.0.right" timestamp="1581350596868">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="893" height="176" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581308352540" />
+    <state width="905" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581350596868" />
     <state width="905" height="179" key="GridCell.Tab.1.bottom" timestamp="1581270051664">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -304,14 +344,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1581269872473" />
-    <state x="584" y="254" width="326" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1581307785769">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1581319049541">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="584" y="254" width="326" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.728@0.0.1366.728" timestamp="1581307785769" />
-    <state x="386" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1581314834358">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1581319049541" />
+    <state x="584" y="254" width="326" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1581350570550">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="386" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581314834358" />
+    <state x="584" y="254" width="326" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.728@0.0.1366.728" timestamp="1581350570550" />
+    <state x="386" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1581344502411">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="386" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581344502411" />
     <state x="521" y="155" key="svn.repositoryBrowser" timestamp="1581270725693">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

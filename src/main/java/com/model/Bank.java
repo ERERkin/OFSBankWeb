@@ -1,5 +1,7 @@
 package com.model;
 
+import com.DB.DB;
+
 import java.util.ArrayList;
 
 public class Bank {
@@ -25,6 +27,7 @@ public class Bank {
         for(int i = 0; i < people.size(); i++){
             budget += people.get(i).profitMonth();
         }
+        DB.updateBank(id, budget);
     }
     //Ну тип он запускает profitMonth() у каждого клиента и смотрит на сколько банк развел этих лохов гыыы
 
@@ -35,13 +38,14 @@ public class Bank {
 
     public void addBorrower(int id, int bankId, String name, String address, int age, String gender){
         people.add(new Person(id, bankId, name, address, age, gender));
+        DB.addClient(new Person(id, bankId, name, address, age, gender));
     }
     // Добавляет нового клиента в список
 
-    public void addCredit(double sum, double percent, int month, double resultSum, boolean kind, int id){
+    public void addCredit(int id, int personId, double sum, double percent, int month, double resultSum, boolean kind){
         for(int i = 0; i < people.size(); i++){
-            if(id == people.get(i).getId()){
-                people.get(i).addCredit(id, sum, percent, month, resultSum, kind);
+            if(personId == people.get(i).getId()){
+                people.get(i).addCredit(id, personId, sum, percent, month, resultSum, kind);
                 break;
             }
         }

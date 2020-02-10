@@ -1,5 +1,7 @@
 package com.model;
 
+import com.DB.DB;
+
 public class StateTreasuryBill {
     //Это класс Гос. Каз. Вексель
     private int id;
@@ -19,6 +21,7 @@ public class StateTreasuryBill {
 
     public double stateTreasuryBillInNextMonth(){
         month--;
+        DB.updateSTB(id, month);
         if(month == 0){
             return 100;
         }
@@ -51,5 +54,13 @@ public class StateTreasuryBill {
 
     public void setPersonId(int personId) {
         this.personId = personId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

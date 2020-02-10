@@ -1,5 +1,7 @@
 package com.model;
 
+import com.DB.DB;
+
 import java.util.ArrayList;
 
 public abstract class Credit {
@@ -93,10 +95,12 @@ public abstract class Credit {
     }
 
     public void monthMinus(){
-        payments.add(new Payment(id, ++countMonth, creditInMonth()));
+        //payments.add(new Payment(id, ++countMonth, creditInMonth()));
+        DB.addPayment(new Payment(0, id, ++countMonth, creditInMonth()));
         resultSum += creditInMonth();
         sum = sum - creditBody();
         month--;
+        DB.updateCredit(id, sum, month, resultSum);
     }
     //Тут еще происходит добавление в график платежей
 

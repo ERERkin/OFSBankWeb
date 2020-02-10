@@ -110,8 +110,8 @@ public class DB {
     }
     public static ArrayList<Credit> creditList(int clientId, boolean creditKind){
         String SQL;
-        if(creditKind) SQL = "select * from credits where sum <> 0 and person_id = ?;";
-        else SQL = "select * from credits where sum = 0 and person_id = ?;";
+        if(creditKind) SQL = "select * from credits where month <> 0 and person_id = ?;";
+        else SQL = "select * from credits where month = 0 and person_id = ?;";
         Person person = null;
         ArrayList<Credit> credits = new ArrayList<>();
         try(Connection connection = connect();
@@ -170,5 +170,64 @@ public class DB {
         }
         return stateTreasuryBills;
     }
-
+    /*public static double sumCredits(){
+        String SQL = "select * from state_treasury_bills where people_id = ?;";
+        try(Connection connection = connect();
+            PreparedStatement statement = connection.prepareStatement(SQL);) {
+            statement.setInt(1, clientId);
+            try(ResultSet rs = statement.executeQuery()) {
+                while(rs.next()) {
+                    stateTreasuryBills.add(new StateTreasuryBill(rs.getInt(1),rs.getInt(2),
+                            rs.getInt(3), rs.getDouble(4)));
+                }
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }*/
+    public static void updateCredit(int creditId, double sum, int month, double resultSum){
+        String SQL = "update Credits set sum = ?, month = ?, result_sum = ? where id = ?;";
+        try(Connection connection = connect();
+            PreparedStatement statement = connection.prepareStatement(SQL);) {
+            statement.setDouble(1, sum);
+            statement.setInt(2, month);
+            statement.setDouble(3, resultSum);
+            statement.setInt(4, creditId);
+            statement.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+    public static void deleteSTB(int idSTB){
+        String SQL = "delete from state_treasury_bills where id = ?;";
+        try(Connection connection = connect();
+            PreparedStatement statement = connection.prepareStatement(SQL);) {
+            statement.setInt(1, idSTB);
+            statement.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+    public static void updateSTB(int idSTB, int month){
+        String SQL = "update state_treasury_bills set month = ? where id = ?;";
+        try(Connection connection = connect();
+            PreparedStatement statement = connection.prepareStatement(SQL);) {
+            statement.setInt(1, month);
+            statement.setInt(2, idSTB);
+            statement.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+    public static void updateBank(int idBank, double budget){
+        String SQL = "update banks set budget = ? where id = ?;";
+        try(Connection connection = connect();
+            PreparedStatement statement = connection.prepareStatement(SQL);) {
+            statement.setDouble(1, budget);
+            statement.setInt(2, idBank);
+            statement.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
 }
