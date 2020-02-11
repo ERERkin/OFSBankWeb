@@ -11,8 +11,8 @@ public abstract class Credit {
     protected double percent;
     protected int month;
     protected int countMonth = 0;
-    protected double resultSum;
-    private boolean kind;
+    protected double resultSum = 0;
+    protected boolean kind;
     protected ArrayList<Payment> payments = new ArrayList<>();
     //Помните у нас был заемщик так вот он превратиолся в кредит а еще тут появился график платежей
 
@@ -22,6 +22,16 @@ public abstract class Credit {
         this.sum = sum;
         this.percent = percent;
         this.month = month;
+    }
+
+    public Credit(int id, int personId, double sum, double percent, int month, int countMonth, double resultSum) {
+        this.id = id;
+        this.personId = personId;
+        this.sum = sum;
+        this.percent = percent;
+        this.month = month;
+        this.countMonth = countMonth;
+        this.resultSum = resultSum;
     }
 
     public int getId() {
@@ -100,7 +110,7 @@ public abstract class Credit {
         resultSum += creditInMonth();
         sum = sum - creditBody();
         month--;
-        DB.updateCredit(id, sum, month, resultSum);
+        DB.updateCredit(id, sum, month, countMonth, resultSum);
     }
     //Тут еще происходит добавление в график платежей
 

@@ -6,6 +6,11 @@ public class CreditDifferential extends Credit {
         setKind(false);
     }
 
+    public CreditDifferential(int id, int personId, double sum, double percent, int month, int countMonth, double resultSum) {
+        super(id, personId, sum, percent, month, countMonth, resultSum);
+        setKind(false);
+    }
+
     public double creditBody(){
         return sum / month;
     }

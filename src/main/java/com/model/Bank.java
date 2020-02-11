@@ -15,6 +15,11 @@ public class Bank {
         this.budget = budget;
     }
 
+    public Bank(int id, double budget) {
+        this.id = id;
+        this.budget = budget;
+    }
+
     public double getBudget() {
         return budget;
     }
@@ -24,6 +29,7 @@ public class Bank {
     }
 
     public void nextMonth(){
+        ArrayList<Person> people = DB.clientList(id);
         for(int i = 0; i < people.size(); i++){
             budget += people.get(i).profitMonth();
         }
@@ -43,23 +49,20 @@ public class Bank {
     // Добавляет нового клиента в список
 
     public void addCredit(int id, int personId, double sum, double percent, int month, double resultSum, boolean kind){
+        Person.addCredit(id, personId, sum, percent, month, resultSum, kind);/*
         for(int i = 0; i < people.size(); i++){
             if(personId == people.get(i).getId()){
                 people.get(i).addCredit(id, personId, sum, percent, month, resultSum, kind);
                 break;
             }
-        }
+        }*/
     }
     // Добавляет кредит к человеку по id
 
-    public void addStateTreasuryBill(int month, int firstSum, int id){
+    public void addStateTreasuryBill(int month, double firstSum, int id){
         budget += firstSum;
-        for(int i = 0; i < people.size(); i++){
-            if(id == people.get(i).getId()){
-                people.get(i).addStateTreasuryBill(id, month, firstSum);
-                break;
-            }
-        }
+        Person.addStateTreasuryBill(id, month, firstSum);
+        DB.updateBank(id, budget);
     }
     // Добавляет облигацию к человеку по id
 

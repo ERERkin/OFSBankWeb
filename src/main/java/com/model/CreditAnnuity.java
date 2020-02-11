@@ -6,6 +6,11 @@ public class CreditAnnuity extends Credit {
         setKind(true);
     }
 
+    public CreditAnnuity(int id, int personId, double sum, double percent, int month, int countMonth, double resultSum) {
+        super(id, personId, sum, percent, month, countMonth, resultSum);
+        setKind(true);
+    }
+
     public double creditBody(){
         return creditInMonth() - sum * percent / 100 / 12;
     }

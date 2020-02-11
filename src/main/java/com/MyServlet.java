@@ -1,5 +1,8 @@
 package com;
 
+import com.DB.DB;
+import com.model.Person;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,8 +19,21 @@ public class MyServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter writer = resp.getWriter();
-        writer.print("<h1>FFFF</h1>");
-        int [][] a = {{1,2},{1,2}};
+        Person client = new Person(Integer.parseInt(req.getParameter("clientId")), 1, req.getParameter("name"),
+                req.getParameter("address"), Integer.parseInt(req.getParameter("age")), req.getParameter("gender"));
+                //Client id:<input type="number" name="clientId"/>
+        //    <br/><%--
+        //    Bank id:<input type="number" name="bankId"/>
+        //    <br/>--%>
+        //    Name:<input type="text" name="name"/>
+        //    <br/>
+        //    Address:<input type="text" name="address"/>
+        //    <br/>
+        //    Age:<input type="number" name="age"/>
+        //    <br/>
+        //    Gender:<input type="text" name="gender"/>
+        //    <br/>
+        //    <input type="submit" name="add client"/>
+        DB.addClient(client);
     }
 }

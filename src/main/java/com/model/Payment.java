@@ -38,6 +38,15 @@ public class Payment {
     public double getPayment() {
         return payment;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     //Ну тут понятно
 
     @Override

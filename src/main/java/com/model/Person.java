@@ -85,7 +85,8 @@ public class Person {
         return passiveCredits;
     }
 
-    public void addCredit(int id, int personId, double sum, double percent, int month, double resultSum, boolean kind){
+    public static void addCredit(int id, int personId, double sum, double percent, int month, double resultSum, boolean kind){
+        System.out.println("KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK");
         if(kind){
             DB.addCredit(new CreditAnnuity(id,personId,sum,percent,month));
         }else {
@@ -94,13 +95,13 @@ public class Person {
     }
     // Добавление кредита в список кредитов
 
-    public void addStateTreasuryBill(int personId,int month, int firstSum){
+    public static void addStateTreasuryBill(int personId,int month, double firstSum){
         DB.addStateTreasuryBill(new StateTreasuryBill(0, personId, month, firstSum));
     }
     // Добавление векселя в список векселей
 
     public double profitMonth(){
-        double answer = 0.0;
+        double answer = 0;
         ArrayList<Credit> activeCredits = DB.creditList(id, true);
         ArrayList<StateTreasuryBill> stateTreasuryBills = DB.getStateTreasuryBillClientId(id);
         for(int i = 0; i < activeCredits.size(); i++){
@@ -110,7 +111,7 @@ public class Person {
         for(int i = 0; i < stateTreasuryBills.size(); i++){
             double k = stateTreasuryBills.get(i).stateTreasuryBillInNextMonth();
             answer -= k;
-            if(Math.round(k) == 0){
+            if(stateTreasuryBills.get(i).getMonth() == 0){
                 DB.deleteSTB(stateTreasuryBills.get(i).getId());
             }
         }

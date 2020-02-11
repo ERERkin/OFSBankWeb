@@ -9,7 +9,8 @@ public class DB {
     private static final String url = "jdbc:postgresql://localhost:5432/";
     private static final String user = "postgres";
     private static final String password = "postgres";
-    public static Connection connect() {
+    public static Connection connect() throws ClassNotFoundException {
+        Class.forName("org.postgresql.Driver");
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url, user, password);
@@ -26,7 +27,7 @@ public class DB {
             statement.setDouble(1, bank.getBudget());
             statement.executeUpdate();
             return true;
-        } catch (SQLException e){
+        } catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
         }
         return false;
@@ -43,23 +44,24 @@ public class DB {
             statement.setString(6, person.getGender());
             statement.executeUpdate();
             return true;
-        } catch (SQLException e){
+        } catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
         }
         return false;
     }
     public static boolean addCredit(Credit credit){
-        String SQL = "insert into Credits(person_id, sum, percent, month) values \n" +
-                "(?,?,?,?);";
+        String SQL = "insert into Credits(person_id, sum, percent, month, kind) values \n" +
+                "(?,?,?,?,?);";;
         try(Connection connection = connect();
             PreparedStatement statement = connection.prepareStatement(SQL);) {
             statement.setInt(1, credit.getPersonId());
             statement.setDouble(2, credit.getSum());
             statement.setDouble(3, credit.getPercent());
-            statement.setInt(4, credit.getPersonId());
+            statement.setInt(4, credit.getMonth());
+            statement.setBoolean(5, credit.isKind());
             statement.executeUpdate();
             return true;
-        } catch (SQLException e){
+        } catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
         }
         return false;
@@ -73,7 +75,7 @@ public class DB {
             statement.setDouble(3, payment.getPayment());
             statement.executeUpdate();
             return true;
-        } catch (SQLException e){
+        } catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
         }
         return false;
@@ -87,7 +89,7 @@ public class DB {
             statement.setDouble(3, stateTreasuryBill.getFirstSum());
             statement.executeUpdate();
             return true;
-        } catch (SQLException e){
+        } catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
         }
         return false;
@@ -99,11 +101,12 @@ public class DB {
             PreparedStatement statement = connection.prepareStatement(SQL);) {
             statement.setInt(1, id);
             try(ResultSet rs = statement.executeQuery()) {
+                rs.next();
                 person = new Person(rs.getInt(1), rs.getInt(2),
                         rs.getString(3), rs.getString(4),
                         rs.getInt(5), rs.getString(6));
             }
-        } catch (SQLException e){
+        } catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
         }
         return person;
@@ -116,22 +119,23 @@ public class DB {
         ArrayList<Credit> credits = new ArrayList<>();
         try(Connection connection = connect();
             PreparedStatement statement = connection.prepareStatement(SQL);) {
-            statement.setBoolean(1, creditKind);
-            statement.setInt(2, clientId);
+            statement.setInt(1, clientId);
             try(ResultSet rs = statement.executeQuery()) {
                 while(rs.next()) {
                     if (rs.getBoolean("kind")) {
                         credits.add(new CreditAnnuity(rs.getInt(1), rs.getInt(2),
-                                rs.getDouble(3), rs.getInt(4),
-                                rs.getInt(5)));
+                                Math.round(rs.getDouble(3)), Math.round(rs.getDouble(4)),
+                                rs.getInt(5), rs.getInt(6),
+                                rs.getDouble(7)));
                     } else {
                         credits.add(new CreditDifferential(rs.getInt(1), rs.getInt(2),
-                                rs.getDouble(3), rs.getDouble(4),
-                                rs.getInt(5)));
+                                Math.round(rs.getDouble(3)), Math.round(rs.getDouble(4)),
+                                rs.getInt(5), rs.getInt(6),
+                                rs.getDouble(7)));
                     }
                 }
             }
-        } catch (SQLException e){
+        } catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
         }
         return credits;
@@ -142,13 +146,14 @@ public class DB {
         try(Connection connection = connect();
             PreparedStatement statement = connection.prepareStatement(SQL);) {
             statement.setInt(1, creditId);
+            System.out.println("TUT");
             try(ResultSet rs = statement.executeQuery()) {
                 while(rs.next()) {
                     payments.add(new Payment(rs.getInt(1), rs.getInt(2),
                             rs.getInt(3), rs.getDouble(4)));
                 }
             }
-        } catch (SQLException e){
+        } catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
         }
         return payments;
@@ -165,7 +170,7 @@ public class DB {
                             rs.getInt(3), rs.getDouble(4)));
                 }
             }
-        } catch (SQLException e){
+        } catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
         }
         return stateTreasuryBills;
@@ -185,16 +190,17 @@ public class DB {
             e.printStackTrace();
         }
     }*/
-    public static void updateCredit(int creditId, double sum, int month, double resultSum){
-        String SQL = "update Credits set sum = ?, month = ?, result_sum = ? where id = ?;";
+    public static void updateCredit(int creditId, double sum, int month, int countMonth, double resultSum){
+        String SQL = "update Credits set sum = ?, month = ?, result_sum = ?, countMonth = ? where id = ?;";
         try(Connection connection = connect();
             PreparedStatement statement = connection.prepareStatement(SQL);) {
             statement.setDouble(1, sum);
             statement.setInt(2, month);
-            statement.setDouble(3, resultSum);
-            statement.setInt(4, creditId);
+            statement.setDouble(3, Math.round(resultSum));
+            statement.setDouble(4, countMonth);
+            statement.setInt(5, creditId);
             statement.executeUpdate();
-        } catch (SQLException e){
+        } catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
         }
     }
@@ -204,7 +210,7 @@ public class DB {
             PreparedStatement statement = connection.prepareStatement(SQL);) {
             statement.setInt(1, idSTB);
             statement.executeUpdate();
-        } catch (SQLException e){
+        } catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
         }
     }
@@ -215,7 +221,7 @@ public class DB {
             statement.setInt(1, month);
             statement.setInt(2, idSTB);
             statement.executeUpdate();
-        } catch (SQLException e){
+        } catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
         }
     }
@@ -226,8 +232,43 @@ public class DB {
             statement.setDouble(1, budget);
             statement.setInt(2, idBank);
             statement.executeUpdate();
-        } catch (SQLException e){
+        } catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
         }
+    }
+    public static Bank selectBank(int bankId){
+        Bank bank = null;
+        String SQL = "select * from banks where id = ?; ";
+        try(Connection connection = connect();
+            PreparedStatement statement = connection.prepareStatement(SQL);) {
+            statement.setInt(1, bankId);
+            try(ResultSet rs = statement.executeQuery()){
+                rs.next();
+                bank = new Bank(bankId, rs.getDouble("budget"));
+            }
+        } catch (SQLException | ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        return bank;
+    }
+    public static ArrayList<Person> clientList(int bankId){
+        ArrayList<Person> people = new ArrayList<>();
+        String SQL = "select * from People_bank where bank_id = ?;";
+        try(Connection connection = connect();
+            PreparedStatement statement = connection.prepareStatement(SQL);) {
+            statement.setInt(1, bankId);
+            try(ResultSet rs = statement.executeQuery()) {
+                while(rs.next()) {/*
+                    stateTreasuryBills.add(new StateTreasuryBill(rs.getInt(1),rs.getInt(2),
+                            rs.getInt(3), rs.getDouble(4)));\*/
+                    people.add(new Person(rs.getInt(1), rs.getInt(2),
+                            rs.getString(3), rs.getString(4), rs.getInt(5),
+                            rs.getString(6)));
+                }
+            }
+        } catch (SQLException | ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        return people;
     }
 }
